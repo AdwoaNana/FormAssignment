@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="icon" type="image/x-icon" href="userImage.ico">
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+
+    <form action="/submissions" method="get" id="form">
+
+        <div class="mainContainer">
+
+            <header>Enter your info</header>
+
+            <div>
+                <label for="name">What is your name?</label>
+                <br>
+                <input type="text" id="name" placeholder="Eg. Jane Doe" required>
+            </div>
+    
+            <div>
+                <label for="email">Enter your EMAIL</label>
+                <br>
+                <input type="email" id="email" placeholder="janedoe123@gmail.com" required>
+            </div>
+    
+    
+            <div>
+                <label for="location">Enter your location</label>
+                <br>
+                <input type="text" id="location" placeholder="Bawku" required>
+            </div>
+    
+    
+            <div>
+                <label for="password">Password</label>
+                <br>
+                <input type="password" id="password" placeholder="adwljqdt123@#$" required>
+            </div>
+        </div>
+        
+
+        <button type="button" id="button"><b>Submit</b></button>
+
+    </form>
+    
+    <script>
+
+        const submit = document.getElementById('button').addEventListener('click', form);
+        
+        function form() {
+            document.getElementById('button').addEventListener('click', event => event.preventDefault());
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const location = document.getElementById('location').value;
+
+            if (name && email && password && location) {
+                    alert(`Hello ${name}! \nPlease ensure you entered the right information. \nEmail; ${email} \nPassword; ${password} \nLocation; ${location}`);
+        } else {
+            alert('Please provide all required information!')
+        }
+        }
+
+        
+    </script>
+</body>
+</html>
